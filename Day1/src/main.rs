@@ -44,6 +44,16 @@ fn module() {
 }
 
 
+
+fn ownership() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+
+    let s3 = s2.clone();
+    println!("{}", s3);
+}
+
+
 fn main() {
 
 
@@ -81,5 +91,6 @@ fn main() {
 
 
     module();
+    ownership();
     
 }
