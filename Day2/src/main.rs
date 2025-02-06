@@ -15,6 +15,25 @@ fn add_numbers(x: i32, y:i32) {
 }
 
 
+fn control_flow() {
+    let number = 3;
+    if number < 5 {
+        println!("The number is less than 5");
+    } else {
+        println!("The number is greater than 5");
+    }
+}
+
+
+fn borrowing() {
+    let x = 5;
+    let y = &x;
+    let z = &x;
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
+    println!("The value of z is: {}", z);
+}
+
 
 fn subtract() {
     let a = 10;
@@ -71,6 +90,17 @@ fn main() {
     println!("{}", my_string);
     // && Syntax for and operator
 
+
+    control_flow();
+
+    let mut a = 5;
+    while a < 10 {
+        println!("The value of a is: {}", a);
+        a += 1;
+    }
+
+
+    borrowing();
 }
 
 
