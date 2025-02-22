@@ -44,10 +44,25 @@ fn main() {
     let doubled:Vec<_> = nums.iter().map(|x| x * 2).collect();
     println!("{:?}", doubled);
 
-    let counter = Counter { count: 0, max: 3 };
+    let counter = Counter { count: 0, max: 3 }; //Custom Iterator
     for num in counter {
         println!("{}", num); // Prints 1, 2, 3
-    }  
+    }
+
+    let add_five = |x| x + 5; //Basic Closure
+    println!("{}", add_five(10));
+
+    let threshold = 10; //Capturing Environment
+    let nums = vec![5, 69, 78];
+    let filtered: Vec<_> = nums.into_iter().filter(|&x| x > threshold).collect();
+    println!("{:?}", filtered);
+
+
+    let data = vec![2, 4, 5]; //move Keyword
+    std::thread::spawn(move || {
+        println!("Data in thread: {:?}", data); 
+    }).join().unwrap();
+
 }
 
 
